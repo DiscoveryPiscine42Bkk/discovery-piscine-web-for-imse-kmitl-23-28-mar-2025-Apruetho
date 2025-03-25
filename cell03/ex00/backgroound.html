@@ -1,0 +1,27 @@
+<html>
+
+<head>
+<title>backgroound</title>
+<link rel = "stylesheet" href = "backgroound.css">
+</head>
+
+<body>
+    <div class="button_position">
+        <button class = "button_size" onclick = "Change_Color_Background()">Click me!</button>
+
+    </div>
+
+
+</body>
+
+<script>
+    const Change_Color_Background = () =>
+    {
+        let newColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+        document.body.style.backgroundColor = newColor;
+    };
+
+</script>
+
+
+</html>

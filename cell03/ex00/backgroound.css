@@ -1,0 +1,16 @@
+body 
+{
+    margin: 0px;
+    height: 100%;
+    width : 100%;
+}
+
+.button_size
+{
+    padding : 5px 50px;
+}
+
+.button_position
+{
+    padding : 10px 5px
+}
