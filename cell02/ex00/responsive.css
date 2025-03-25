@@ -1,0 +1,26 @@
+table
+{
+    width : 100%;
+    border-collapse:collapse;
+    margin : 0px;
+    height : 100%
+}
+
+td
+{
+    padding : 50px;
+    width : 50%;
+    height : 100%;
+    text-align : left;
+    border : 2px solid black;
+}
+
+.block-num1
+{
+    background-color: lightblue;
+}
+
+.block-num2
+{
+    background-color: crimson;
+}
