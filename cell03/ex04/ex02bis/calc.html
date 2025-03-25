@@ -1,0 +1,131 @@
+<html>
+
+<head>
+<title>Calculator</title>
+</head>
+
+<style>
+    html, body
+    {
+    height: 100%;
+    font-family: arial;
+    }
+    
+    .container-fluid
+    {
+        width: 100%;
+        display: flex;
+    }
+    
+    .content_position
+    {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .center-text-bold-big
+    {
+        font-size: 4em;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="center-text-bold-big">
+    CALCULATOR
+    </div>
+
+    <div class="container-fluid">
+      <div class="content_position">
+        <form id="calculator-form">
+          <input type="text" id="box_1" required />
+          <select id="operator">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="mulply">*</option>
+            <option value="divide">/</option>
+            <option value="percent">%</option>
+          </select>
+          <input type="text" id="box_2" required />
+          <input type="submit" value="Try me!" />
+        </form>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+<script>
+setInterval(function ()
+{
+    alert("Please, use me...");
+}, 30000);
+
+$(document).ready(function ()
+{
+    $('#calculator-form').on('submit', function (event)
+    {
+        event.preventDefault();
+        const value_1 = parseFloat($('#box_1').val());
+        const value_2 = parseFloat($('#box_2').val());
+        const operator = $('#operator').val();
+        let result = 0;
+
+        if (isNaN(value_1) || isNaN(value_2))
+        {
+            console.log("Error :(");
+            alert("Error :(");
+            return;
+        }
+        if (value_1 < 0 || value_2 < 0) 
+        {
+            console.log("Error :(");
+            alert("Error :(");
+            return;
+        }
+
+        switch (operator)
+        {
+            case 'plus':
+                result = value_1 + value_2;
+                break;
+            case 'minus':
+                result = value_1 - value_2;
+                break;
+            case 'mulply':
+                result = value_1 * value_2;
+                break;
+            case 'divide':
+                if (value_2 === 0)
+                {
+                    console.log("It’s over 9000!");
+                    alert("It’s over 9000!");
+                     return;
+                }
+                result = value_1 / value_2;
+                break;
+            case 'percent':
+                result = value_1 % value_2;
+                break;
+            default:
+                console.log("Unknown operator.");
+                alert("Unknown operator.");
+                return;
+        }
+
+        if (isNaN(result))
+        {
+            console.log("It’s over 9000!");
+            alert("It’s over 9000!");
+        }
+        else
+        {
+            console.log(result);
+            alert(result);
+        }
+    });
+});
+</script>
+</html>
