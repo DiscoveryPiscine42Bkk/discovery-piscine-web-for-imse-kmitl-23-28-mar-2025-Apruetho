@@ -1,0 +1,119 @@
+<html>
+
+<head>
+<title>Balloon</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<style>
+html, body
+{
+    height : 100%;
+    width : 100%;
+    margin : 0px;
+    padding : 0px;
+}
+
+.center-horizontally
+{
+    display : flex;
+    flex-direction : row;
+    justify-content : center;
+}
+
+.circle-shape
+{
+    width : 200px;
+    height : 200px;
+    background-color : red;
+    border-radius : 100%;
+    cursor : pointer;
+    transition: all 0.2s ease;
+}
+</style>
+
+<body>
+    <div class="center-horizontally">
+        <div class="circle-shape" 
+        onclick = "Click_Event()"
+        onmouseenter = "Mouse_In_Event()"
+        onmouseleave = "Mouse_Out_Event()"
+        id="circle-shape">
+        </div>
+    </div>
+</body>
+
+<script>
+let _current_color = "red";
+function Click_Event()
+{
+    //CHANGE COLOR//
+    if (_current_color == "red")
+    {
+        $("#circle-shape").css("background-color", "green");
+        _current_color = "green";
+    }
+    else if (_current_color == "green")
+    {
+        $("#circle-shape").css("background-color", "blue");
+        _current_color = "blue";
+    }
+    else if (_current_color == "blue")
+    {
+        $("#circle-shape").css("background-color", "red");
+        _current_color = "red";
+    };
+
+    //INCREASE SIZE//
+    let _current_w = $("#circle-shape").width();
+    let _current_h = $("#circle-shape").height();
+
+    if (_current_w >= 420)
+    {
+        $("#circle-shape").css("width", "200px");
+        $("#circle-shape").css("height", "200px");
+    }
+    else
+    {
+        _current_h = _current_h + 10;
+        _current_w = _current_w + 10;
+        $("#circle-shape").css("width", _current_w + "px");
+        $("#circle-shape").css("height", _current_h + "px");
+    };
+};
+
+//SHRINK BALLOON
+function Mouse_In_Event()
+{
+    let _current_w = $("#circle-shape").width();
+    let _current_h = $("#circle-shape").height();
+
+    //CHECK IF THE SIZE IS UNSHRICKABLE < 200px
+    if (_current_w > 200)
+    {
+        _current_h = _current_h - 5;
+        _current_w = _current_w - 5;
+        $("#circle-shape").css("width", _current_w + "px");
+        $("#circle-shape").css("height", _current_h + "px");
+    };
+}
+
+//UNSHRINK BALLOON
+function Mouse_Out_Event()
+{
+    let _current_w = $("#circle-shape").width();
+    let _current_h = $("#circle-shape").height();
+    if (_current_w > 200)
+    {
+        _current_h = _current_h + 5;
+        _current_w = _current_w + 5;
+        $("#circle-shape").css("width", _current_w + "px");
+        $("#circle-shape").css("height", _current_h + "px");
+    };
+
+}
+
+
+</script>
+
+</html>

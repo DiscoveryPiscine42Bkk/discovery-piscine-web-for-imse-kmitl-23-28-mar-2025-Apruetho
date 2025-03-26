@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+<title>To-Do List</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<style>
+body
+{
+    background-color: lightblue;
+    text-align: center;
+    font-family: Arial;
+}
+
+
+.task_bar
+{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background: white;
+    margin: 5px auto;
+    width: auto;
+    min-width : 200px;
+    max-width : 70%;
+    cursor: pointer;
+}
+
+.checkbox
+{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.checked-box
+{
+    background-color: green;
+}
+
+.checked-taskbar
+{
+    background-color: lightgoldenrodyellow;
+}
+
+.task-text
+{
+    font-size : 16px;
+    margin-left: 20px;
+}
+
+button
+{
+    margin: 10px;
+    padding: 5px 15px;
+    font-size: 16px;
+}
+
+
+
+
+</style>
+
+<body>
+    <h1>TO DO LIST</h1>
+
+    <button id="request_new_task">
+        New
+    </button>
+
+    <ul id="ft_list"></ul>
+
+</body>
+
+<script src="togo.js"></script>
+
+</html>
